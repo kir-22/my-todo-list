@@ -1,0 +1,10 @@
+.App {
+  /* scroll-behavior: smooth; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; 
+  background: #FFaaaa url(./assets/desk-background.jpg) no-repeat;
+  background-size: cover;
+}
