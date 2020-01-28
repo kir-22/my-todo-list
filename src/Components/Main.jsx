@@ -12,22 +12,31 @@ class Main extends Component {
       [id]: value,
     });
   };
-  render() {console.warn(style);
+  addStick = () => {
+    this.state.cards.push(this.state.message);
+    this.setState({
+      message: '',
+      cards: this.state.cards,
+    });
+  };
+
+  render() {
     return (
       <React.Fragment>
         <div className={style.container}>
           <input
-            className={style.inputText} 
-            id='message' 
-            type='text' 
-            onChange={this.changeText} 
-            value={this.state.message}  
+            className={style.inputText}
+            id='message'
+            type='text'
+            onChange={this.changeText}
+            value={this.state.message}
           />
-          <button className={style.button}>{'Добавить'}</button>
+          <button
+            className={style.button}
+            onClick = {this.addStick}
+          >{'Добавить'}</button>
         </div>
-        <div className={style.cardsContainer}>
-          {this.state.cards.map(el=><Card/>)}
-        </div>
+          <Card cards={this.state.cards} />
       </React.Fragment>
     );
   }
